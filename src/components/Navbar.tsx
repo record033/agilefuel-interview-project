@@ -9,7 +9,7 @@ export const Navbar = () => {
       <AppBar position='static'>
         <Toolbar>
           <Button color='inherit' onClick={() => navigate('/', { replace: true })}>
-            Homepage
+            HomePage
           </Button>
           <Button color='inherit' onClick={() => navigate('/filters', { replace: true })}>
             Search by filters
