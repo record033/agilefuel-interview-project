@@ -10,15 +10,18 @@ import { TArticle } from '../types/articleTypes';
 import { NewsCard } from './NewsCard';
 
 export const Homepage = () => {
-  const [articles, setArticles] = useState<TArticle[]>([]);
+  const [articles, setArticles] = useState<any[]>([]);
 
-  const url = urlBuilder('everything');
+  const url = urlBuilder('live');
 
   useEffect(() => {
-    axios.get(url).then((response) => {
-      setArticles(response.data.articles);
+    axios.get('http://api.mediastack.com/v1/news?access_key=7101e48a798e2053c65d6c6e8213d50d').then((response) => {
+      setArticles(response.data);
     });
   }, [url]);
+
+  console.log(url);
+  console.log(articles);
 
   const Row = ({ index, style }: { index: number; style: React.CSSProperties }) => (
     <div style={style}>
