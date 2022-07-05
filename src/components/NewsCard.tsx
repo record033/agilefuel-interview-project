@@ -6,9 +6,9 @@ interface INewsCardProps {
   article: TArticle;
 }
 
-export const NewsCard: React.FC<any> = ({ article }) => (
+export const NewsCard: React.FC<INewsCardProps> = ({ article }) => (
   <Card sx={{ width: 1135, height: 680, backgroundColor: '#e3f2fd', marginBottom: 15, marginRight: 10 }}>
-    <CardMedia alt='failed to load image' component='img' height='240' image={article.image} />
+    <CardMedia alt='failed to load image' component='img' height='240' image={article.urlToImage} />
     <CardContent>
       <Typography>{article.title}</Typography>
     </CardContent>
@@ -16,7 +16,7 @@ export const NewsCard: React.FC<any> = ({ article }) => (
       <Typography>{article.description}</Typography>
     </CardContent>
     <CardContent>
-      <Typography>{article.author}</Typography>
+      <Typography>{article.content}</Typography>
     </CardContent>
     <CardContent>
       <a href={article.url}>read more..</a>

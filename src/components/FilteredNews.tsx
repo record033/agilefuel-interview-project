@@ -24,7 +24,7 @@ export const FilteredNews = () => {
   const [isFilterModalOpened, setIsFilterModalOpened] = useState<boolean>(false);
   const [country, setCountry] = useState<string>('us');
   const [category, setCategory] = useState<string>('general');
-  const [url, setUrl] = useState<string>(() => urlBuilder('live'));
+  const [url, setUrl] = useState<string>(() => urlBuilder('everything'));
 
   const handleCountryChange = (event: any) => {
     setCountry(event.target?.value);
@@ -34,7 +34,7 @@ export const FilteredNews = () => {
   };
   const handleApply = () => {
     setIsFilterModalOpened(false);
-    setUrl(urlBuilder('search', country, category));
+    setUrl(urlBuilder('filtered', country, category));
   };
 
   useEffect(() => {
