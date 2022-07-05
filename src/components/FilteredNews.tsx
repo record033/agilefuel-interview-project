@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FixedSizeList as List } from 'react-window';
 import {
+  Box,
   Button,
   Container,
   Dialog,
@@ -57,7 +58,7 @@ export const FilteredNews = () => {
       key='filtered'
       transition={{ duration: 0.5 }}
     >
-      <div style={{ display: 'flex', gap: 10, alignContent: 'center', marginLeft: 10 }}>
+      <Box sx={{ display: 'flex', gap: 10, alignContent: 'center', marginLeft: 10 }}>
         <h2>filtered news</h2>
         <Button
           sx={{ height: 35, marginTop: 2 }}
@@ -66,7 +67,7 @@ export const FilteredNews = () => {
         >
           Open filters
         </Button>
-      </div>
+      </Box>
       <Container
         maxWidth='lg'
         sx={{ display: 'flex', alignContent: 'center', flexWrap: 'wrap', marginLeft: '18vw', transitionDuration: 1 }}
